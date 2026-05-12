@@ -1,14 +1,3 @@
-// ============================================================
-//   SUBWAY RUNNER - Enhanced OpenGL/GLUT Endless Runner
-//   Versi pengembangan dengan: Intro/Login, Multi-Camera,
-//   Visual realistis, Obstacle kereta detail, UI profesional
-//
-//   Compile Linux:
-//     g++ subway_runner.cpp -o subway_runner -lGL -lGLU -lglut -lm
-//   Compile Windows:
-//     g++ subway_runner.cpp -o subway_runner -lopengl32 -lglu32 -lfreeglut -lm
-// ============================================================
-
 #include <GL/glut.h>
 #include <math.h>
 #include <stdio.h>
@@ -1109,10 +1098,10 @@ void drawIntro() {
 
     // Shadow
     glColor4f(0.0f,0.0f,0.0f,0.7f);
-    drawTextCentered(342, "SUBWAY RUNNER", GLUT_BITMAP_TIMES_ROMAN_24);
+    drawTextCentered(342, "DIPONEGORO ENDLESS RUN", GLUT_BITMAP_TIMES_ROMAN_24);
 
     glColor3f(1.0f*pulse, 0.82f*pulse, 0.05f*pulse);
-    drawTextCentered(345, "SUBWAY RUNNER", GLUT_BITMAP_TIMES_ROMAN_24);
+    drawTextCentered(345, "DIPONEGORO ENDLESS RUN", GLUT_BITMAP_TIMES_ROMAN_24);
 
     glColor3f(0.7f,0.7f,0.75f);
     drawTextCentered(295, "An OpenGL Endless Runner", GLUT_BITMAP_HELVETICA_12);
@@ -1156,7 +1145,7 @@ void drawLogin() {
 
     // Title
     glColor3f(1.0f,0.82f,0.08f);
-    drawTextCentered(400, "SUBWAY RUNNER", GLUT_BITMAP_TIMES_ROMAN_24);
+    drawTextCentered(400, "DIPONEGORO ENDLESS RUN", GLUT_BITMAP_TIMES_ROMAN_24);
 
     glColor3f(0.7f,0.75f,0.85f);
     drawTextCentered(368, "Enter your username to continue", GLUT_BITMAP_HELVETICA_12);
@@ -1212,7 +1201,7 @@ void drawMenu() {
     // Logo panel
     drawPanel(220,410,680,490, 0.05f,0.05f,0.18f,0.92f);
     glColor3f(1.0f,0.82f,0.08f);
-    drawTextCentered(455, "SUBWAY RUNNER", GLUT_BITMAP_TIMES_ROMAN_24);
+    drawTextCentered(455, "DIPONEGORO ENDLESS RUN", GLUT_BITMAP_TIMES_ROMAN_24);
 
     char greet[64];
     snprintf(greet,sizeof(greet),"Welcome, %s!", username);
@@ -1691,7 +1680,7 @@ int main(int argc, char** argv) {
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     glutInitWindowSize(WINDOW_W, WINDOW_H);
     glutInitWindowPosition(80, 60);
-    glutCreateWindow("Subway Runner - Enhanced Edition");
+    glutCreateWindow("DIPONEGORO ENDLESS RUN - Enhanced Edition");
 
     initGL();
     initGame();
