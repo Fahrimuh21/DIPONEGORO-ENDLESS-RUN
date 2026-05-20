@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o main.o src/Camera.o src/Coins.o src/Environment.o src/Game.o src/Init.o src/Input.o src/Obstacles.o src/Player.o src/Render.o src/Texture.o src/UI.o src/Utility.o
-LINKOBJ  = main.o main.o src/Camera.o src/Coins.o src/Environment.o src/Game.o src/Init.o src/Input.o src/Obstacles.o src/Player.o src/Render.o src/Texture.o src/UI.o src/Utility.o
+OBJ      = src/Camera.o src/Coins.o src/Environment.o src/Game.o src/Init.o src/Input.o src/Obstacles.o src/Player.o src/Render.o src/Texture.o src/UI.o src/Utility.o main.o
+LINKOBJ  = src/Camera.o src/Coins.o src/Environment.o src/Game.o src/Init.o src/Input.o src/Obstacles.o src/Player.o src/Render.o src/Texture.o src/UI.o src/Utility.o main.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/lib" -static-libstdc++ -static-libgcc -mwindows -lglut32 -lglu32 -lopengl32 -lwinmm -lgdi32
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include/c++"
@@ -23,12 +23,6 @@ clean: clean-custom
 
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
-
-main.o: main.cpp
-	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
-
-main.o: main.cpp
-	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
 
 src/Camera.o: src/Camera.cpp
 	$(CPP) -c src/Camera.cpp -o src/Camera.o $(CXXFLAGS)
@@ -65,3 +59,6 @@ src/UI.o: src/UI.cpp
 
 src/Utility.o: src/Utility.cpp
 	$(CPP) -c src/Utility.cpp -o src/Utility.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
