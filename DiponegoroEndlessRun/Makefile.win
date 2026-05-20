@@ -1,0 +1,67 @@
+# Project: Project1
+# Makefile created by Dev-C++ 5.7.1
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o main.o src/Camera.o src/Coins.o src/Environment.o src/Game.o src/Init.o src/Input.o src/Obstacles.o src/Player.o src/Render.o src/Texture.o src/UI.o src/Utility.o
+LINKOBJ  = main.o main.o src/Camera.o src/Coins.o src/Environment.o src/Game.o src/Init.o src/Input.o src/Obstacles.o src/Player.o src/Render.o src/Texture.o src/UI.o src/Utility.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/lib" -static-libstdc++ -static-libgcc -mwindows -lglut32 -lglu32 -lopengl32 -lwinmm -lgdi32
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include/c++"
+BIN      = DiponegoroEndlessRun.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) -DGLUT_STATIC
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+src/Camera.o: src/Camera.cpp
+	$(CPP) -c src/Camera.cpp -o src/Camera.o $(CXXFLAGS)
+
+src/Coins.o: src/Coins.cpp
+	$(CPP) -c src/Coins.cpp -o src/Coins.o $(CXXFLAGS)
+
+src/Environment.o: src/Environment.cpp
+	$(CPP) -c src/Environment.cpp -o src/Environment.o $(CXXFLAGS)
+
+src/Game.o: src/Game.cpp
+	$(CPP) -c src/Game.cpp -o src/Game.o $(CXXFLAGS)
+
+src/Init.o: src/Init.cpp
+	$(CPP) -c src/Init.cpp -o src/Init.o $(CXXFLAGS)
+
+src/Input.o: src/Input.cpp
+	$(CPP) -c src/Input.cpp -o src/Input.o $(CXXFLAGS)
+
+src/Obstacles.o: src/Obstacles.cpp
+	$(CPP) -c src/Obstacles.cpp -o src/Obstacles.o $(CXXFLAGS)
+
+src/Player.o: src/Player.cpp
+	$(CPP) -c src/Player.cpp -o src/Player.o $(CXXFLAGS)
+
+src/Render.o: src/Render.cpp
+	$(CPP) -c src/Render.cpp -o src/Render.o $(CXXFLAGS)
+
+src/Texture.o: src/Texture.cpp
+	$(CPP) -c src/Texture.cpp -o src/Texture.o $(CXXFLAGS)
+
+src/UI.o: src/UI.cpp
+	$(CPP) -c src/UI.cpp -o src/UI.o $(CXXFLAGS)
+
+src/Utility.o: src/Utility.cpp
+	$(CPP) -c src/Utility.cpp -o src/Utility.o $(CXXFLAGS)
